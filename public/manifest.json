@@ -1,0 +1,8 @@
+{
+  "name": "Emerald Stakes Gambling",
+  "short_name": "EmeraldStakes",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
