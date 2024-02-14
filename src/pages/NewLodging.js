@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function NewLodging() {
     const navigate = useNavigate();
@@ -50,6 +51,8 @@ function NewLodging() {
             minimum_nights: ""
         });
     };
+
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
     return (
         <Box
@@ -103,10 +106,10 @@ function NewLodging() {
                 />
             </Stack>
             <Stack direction="row" spacing={2} m={3}>
-                <Button variant="outlined" onClick={handleAdd} startIcon={<AddIcon />}>
+                <Button variant="contained" onClick={handleAdd} startIcon={<AddIcon />} disabled={!isLoggedIn}>
                     Add new
                 </Button>
-                <Button variant="outlined" onClick={handleClear} startIcon={<DeleteIcon />} color="error">
+                <Button variant="contained" onClick={handleClear} startIcon={<DeleteIcon />} color="error">
                     Clear fields
                 </Button>
             </Stack>
