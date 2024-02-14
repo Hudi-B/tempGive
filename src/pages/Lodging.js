@@ -47,7 +47,6 @@ function Lodging() {
             .then(response => {
                 setLodgingData(response.data);
                 setIsLoading(false);
-                console.log(response.data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);

@@ -45,7 +45,7 @@ function EditLodging() {
     const handleAdd = async () => {
         try {
             const priceInt = parseInt(formData.price);
-            await axios.post('https://nodejs.sulla.hu/data', {
+            await axios.put(`https://nodejs.sulla.hu/data/${id}`, {
                 ...formData,
                 price: priceInt
             }, {
